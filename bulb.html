@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0rem;
+      margin: 0rem;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      background-color: darkslateblue;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    #h1 {
+      color: white;
+      text-shadow: 2px 5px 5px rgb(0, 0, 0);
+      font-size: 5rem;
+      margin-bottom: 2rem;
+    }
+
+    img {
+      width: 42rem;
+    }
+
+    #button-div {
+      margin-top: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10rem;
+    }
+
+    button {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      width: 20rem;
+      height: 5rem;
+      border: 2px solid black;
+      border-radius: 5px;
+      font-size: 3rem;
+      box-shadow: 2px 5px 5px rgb(0, 0, 0);
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      transition-duration: 0.2;
+    }
+
+    @media (width<=860px) {
+      html {
+        font-size: 55%;
+      }
+    }
+
+    @media (width<=750px) {
+      html {
+        font-size: 45%;
+      }
+    }
+
+    @media (width<=610px) {
+      #h1 {
+        text-align: center;
+      }
+    }
+
+    @media (width<=380px) {
+      #button-div {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+
+    @media (width<=310px) {
+      html {
+        font-size: 35%;
+      }
+    }
+
+    @media (width<=224px) {
+      img {
+        width: 30rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="h1">Click on the button to On/Off the bulb.</h1>
+  <img id="off-bulb" src="https://cdn-icons-png.flaticon.com/512/702/702814.png" alt="" />
+
+  <div id="button-div">
+    <button id="on">Turn On</button>
+    <button id="off">Turn Off</button>
+  </div>
+
+  <script>
+    let button_on = document.getElementById("on");
+    let button_off = document.getElementById("off");
+
+    button_on.addEventListener("click", () => {
+      let bulb = document.getElementById("off-bulb");
+      bulb.src = "https://cdn-icons-png.flaticon.com/512/702/702797.png";
+    });
+
+    button_off.addEventListener("click", () => {
+      let bulb = document.getElementById("off-bulb");
+      bulb.src = "https://cdn-icons-png.flaticon.com/512/702/702814.png";
+    });
+  </script>
+</body>
+
+</html>
